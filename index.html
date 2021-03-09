@@ -5,14 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
 </head>
 <body>
-
-    <div id="testQuestion"></div>
+    <div class="container-fluid">
+     
+    <!-- <div id="testQuestion"></div>
     <div id="testAnswer"></div>
 
-    <button id="showAnswer">Show the Answer</button>
-    
+    <button id="showAnswer">Show the Answer</button> -->
+    <button id="category" type="button" class="btn btn-warning mt-4 ml-4" >Warning</button>
+
+    <div class="card mt-4 ml-4" style="width: 18rem;">
+        <img src="https://placeimg.com/640/480/any" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h2 class="card-title" id="pointValue"></h2>
+          <h5 class="card-title" id="testQuestion"></h5>
+          <p class="card-text" id="testAnswer"></p>
+          <a href="#" class="btn btn-primary" id="showAnswer">Show Answer</a>
+        </div>
+      </div>
+     
+      <p id="test"></p>
+</div>
     <script src="api.js"></script>
 </body>
 </html>

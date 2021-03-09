@@ -5,6 +5,7 @@ var xhr = new XMLHttpRequest ();
         console.log(parsed)
         document.getElementById("testQuestion").innerHTML = parsed["question"];
         document.getElementById("testAnswer").innerHTML = parsed["answer"];
+        document.getElementById("pointValue").innerHTML = `${parsed["value"]} pts.`;
 
         showAnswer();
       }
@@ -22,3 +23,29 @@ var xhr = new XMLHttpRequest ();
         answer.style.display = "block";
     }
 
+
+
+    var category = new XMLHttpRequest ();
+    category.onreadystatechange = function() {
+      if (category.readyState === 4 && category.status == 200){
+        console.log(category.responseText)
+        let parsed  = JSON.parse(this.responseText);
+        console.log(parsed);
+
+        let clues = parsed.clues
+        
+        let title = parsed["title"];
+        
+        showCategory(title)
+      }
+    }
+
+    category.open("GET", "http://jservice.io/api/category?id=5412");
+    category.send();
+    
+   function showCategory(para){
+        document.getElementById("category").innerHTML = para;
+   };
+    
+    
+    //next question button will probably have to refresh the page to get another question?
