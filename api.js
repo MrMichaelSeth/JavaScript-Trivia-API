@@ -27,11 +27,9 @@ var xhr = new XMLHttpRequest ();
         }
     }
 
-    function showOnClick() {
-        let answer = document.getElementsByClassName("testAnswer")
-        for(let i=0; i<answer.length; i++){
-        answer[i].style.display = "block";
-        }
+    function showOnClick(event) {
+        console.log(event.target.previousSibling);
+        event.target.previousSibling.style.display = "block";
     }
 
 
@@ -43,8 +41,9 @@ var xhr = new XMLHttpRequest ();
   4. Call showQuestions function.
     4a. Loop through clues array and build the card with object's properties (value, question, answer).
     4b. After each iteration, attach resultant card to element at the current loop index.
-  5. Have the on-click event listener take another callback that targets the testAnswer and assign it to a variable.
-  6. Also have the callback make the testAnswer have a display style of block, which reverses the original CSS styling. See the CSS file.
+  5. Call showAnswer function.
+    5a. Add event listener to each button by looping through showButton.
+    5b. Have the on-click event listener take another callback that targets the event.target's previous sibiling element and have a display style of block, which reverses the original CSS styling. See the CSS file.
 */
     var category = new XMLHttpRequest ();
     category.onreadystatechange = function() {
@@ -82,13 +81,15 @@ var xhr = new XMLHttpRequest ();
             card += '<h5 class="card-title" >';
             card += clues[i].question;
             card += '</h5>';
-            card += '<p class="card-text testAnswer" >';
+            card += '<p class="card-text" >';
             card += clues[i].answer;
             card += '</p>';
             card += '<a href="#" class="btn btn-primary showAnswer" >Show Answer</a>';
             card += '</div>';
           document.getElementById([i]).innerHTML = card;
         }
+
+        showAnswer();
    }
 
     //next question button will probably have to refresh the page to get another question?
