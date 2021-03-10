@@ -55,16 +55,16 @@ var xhr = new XMLHttpRequest ();
         for(let i = 0; i < 3; i++ ) {
           let card = '<img src="https://placeimg.com/640/480/any" class="card-img-top" alt="...">';
             card += '<div class="card-body">';
-            card += '<h2 class="card-title" id="pointValue">';
+            card += '<h2 class="card-title" >';
             card += clues[i].value;
             card += '</h2>';
-            card += '<h5 class="card-title" id="testQuestion">';
+            card += '<h5 class="card-title" >';
             card += clues[i].question;
             card += '</h5>';
-            card += '<p class="card-text" id="testAnswer">';
+            card += '<p class="card-text" >';
             card += clues[i].answer;
             card += '</p>';
-            card += '<a href="#" class="btn btn-primary" id="showAnswer">Show Answer</a>';
+            card += '<a href="#" class="btn btn-primary " >Show Answer</a>';
             card += '</div>';
           document.getElementById([i]).innerHTML = card;
         }
