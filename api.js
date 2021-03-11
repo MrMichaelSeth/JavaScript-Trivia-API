@@ -81,7 +81,7 @@ var xhr = new XMLHttpRequest ();
             card += '<h5 class="card-title" >';
             card += clues[i].question;
             card += '</h5>';
-            card += '<p class="card-text" >';
+            card += '<p class="card-text hideAnswer" >';
             card += clues[i].answer;
             card += '</p>';
             card += '<a href="#" class="btn btn-primary showAnswer" >Show Answer</a>';
